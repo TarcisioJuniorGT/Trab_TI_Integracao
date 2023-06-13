@@ -49,7 +49,10 @@ class FoodPaymentController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        FoodPayment::create($data);
-        return response()->json(['success' => 'Pagamento de "Alimentação registrado com sucesso.'], 200);
+        $model = FoodPayment::create($data);
+        return response()->json([
+            'success' => 'Pagamento de "Alimentação registrado com sucesso.',
+            'data' => $model
+        ], 200);
     }
 }

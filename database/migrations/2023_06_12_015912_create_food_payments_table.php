@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('purchase_id');
             $table->double('value');
-            $table->string('status')->default('Examination');
+            $table->string('status')->default('Approved');
             $table->timestamps();
         });
     }
